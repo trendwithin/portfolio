@@ -6,7 +6,7 @@ feature "Clickning Blog Link on Home Page" do
     #then expect this behavior
     visit '/'
     click_link('Blog')
-    page.must_have_content "Hello World"
+    page.must_have_content "Listing Articles"
     page.wont_have_content "Goobye All!"
   end
 end
