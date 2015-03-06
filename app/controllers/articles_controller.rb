@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+     flash[:success] = "Update Successful"
   end
 
   # POST /articles
