@@ -1,5 +1,47 @@
 require "test_helper"
 
+feature "It clicks new" do
+  scenario "the page renders new article" do
+  visit articles_path
+  page.click_link('New Article')
+  page.must_have_content "New Article"
+  end
+end
+
+feature "It clicks Back" do
+  scenario "the page returns to Articles" do
+  visit new_article_path
+  page.click_link('Back')
+  page.must_have_content "New Article"
+  end
+end
+
+feature "Creating an article" do
+  scenario "submit form data to create a new article" do
+    #Given a completed new article form
+    visit new_article_path
+    fill_in "Title", with: "Code Rails"
+    fill_in "Body", with: "This is how I learned to make web apps"
+
+    #when I submit the form
+    click_on "Create Article"
+
+    #then
+    page.text.must_include "Article was successfully created"
+    page.text.must_include "how I learned to make web apps"
+  end
+end
+
+
+=begin
+
+feature "Article View Renders" do
+  scenario "the page returns Listing Articles" do
+    visit 'articles'
+    page.must_have_content "Listing Articles"
+    page.wont_have_content "Goobye All!"
+  end
+end
 describe ArticlesController do
 
   let(:article) { articles :one }
@@ -47,3 +89,4 @@ describe ArticlesController do
   end
 
 end
+=end
