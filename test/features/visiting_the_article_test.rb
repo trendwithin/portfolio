@@ -11,7 +11,7 @@ feature "Creating an article" do
     #when I submit the form
     click_on "Create Article"
 
-    #then
+    #then there should be the following text
     page.text.must_include "Article was successfully created"
     page.text.must_include "how I learned to make web apps"
   end
@@ -19,6 +19,7 @@ end
 
 feature "When the page has articles" do
   scenario "Click show renders article" do
+
   #Given a completed new article
   visit new_article_path
   fill_in "Title", with: "Code Rails"
@@ -31,7 +32,7 @@ feature "When the page has articles" do
   visit articles_path
   page.click_link "Show"
 
-  #then
+  #then the page should include the following text
   page.text.must_include "This is how I learned to make web apps"
   end
 end
