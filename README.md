@@ -8,4 +8,4 @@ Render Welcome Page
 
 Blog Image
 
-![Blog](https://www.dropbox.com/s/rr929hzf533cgsw/Blog.png?dl=0)
+![Blog](http://goo.gl/JZ2C3v)
