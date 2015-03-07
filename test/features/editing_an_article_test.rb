@@ -14,7 +14,7 @@ feature "Ability to edit and modify a blog post" do
 
   #given a list of articles to show
   visit articles_path
-  click_link "Edit"
+  first(:link, 'Edit').click
 
   #Given a modification to the blog post
   fill_in "Title", with: "One"

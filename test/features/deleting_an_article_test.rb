@@ -7,7 +7,7 @@ feature "Deleting an Article" do
     visit articles_path(article)
 
     #When DELETE is clicked
-    click_on "Destroy"
+    first(:link, 'Destroy').click
     page.wont_have_content "Day by Day"
   end
 end
