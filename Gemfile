@@ -38,6 +38,10 @@ group :development, :test do
   gem 'byebug'
   gem 'minitest-rails'
   gem 'launchy'
+  gem 'selenium-webdriver', require: false
+  gem 'poltergeist', require: false
+  gem 'capybara'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

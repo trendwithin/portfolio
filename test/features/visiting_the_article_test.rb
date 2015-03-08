@@ -1,7 +1,8 @@
 require "test_helper"
-=begin
+
 feature "Creating an article" do
   scenario "submit form data to create a new article" do
+
     #Given a completed new article form
     visit articles_path
     click_link('New Article')
@@ -13,7 +14,6 @@ feature "Creating an article" do
 
     #then there should be the following text
     page.text.must_include "Article was successfully created"
-    page.text.must_include "how I learned to make web apps"
+    page.text.must_include "Code"
   end
 end
-=end
