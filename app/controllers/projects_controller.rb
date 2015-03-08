@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-     # flash[:notice] = "Project has been created"
+      flash[:notice] = "Project has been created"
       redirect_to @project
     else
       #exit stage left
@@ -18,7 +18,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  @project = Project.find(params[:id])
   end
 
   private
