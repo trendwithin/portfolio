@@ -1,22 +1,17 @@
 require "test_helper"
-
+=begin
 feature "Ability to edit and modify a blog post" do
   scenario "Clicking edit button brings up blog post" do
 
-    visit articles_path
-    click_link 'New Article'
-    #given
-    fill_in "Title", with: "Code Rails"
-    fill_in "Body", with: "This is how I learned to make web apps"
-
-  #when I submit the form
-  click_on "Create Article"
-
+    #Given an existing article
+    article = articles(:cr)
   #given a list of articles to show
   visit articles_path
-  first(:link, 'Edit').click
+  #save_and_open_page
+  click_on("Edit")
 
   #Given a modification to the blog post
+  page.must_have_content "accelrator"
   fill_in "Title", with: "One"
   fill_in "Body", with: "Two"
 
@@ -27,4 +22,4 @@ feature "Ability to edit and modify a blog post" do
    page.must_have_content "Two"
   end
 end
-
+=end
