@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 20150305225342) do
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+    end
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "technologies_used"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 end

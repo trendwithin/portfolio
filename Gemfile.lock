@@ -51,9 +51,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.5.5)
-      ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -66,11 +65,11 @@ GEM
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.4.0)
-    ffi (1.9.6)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0)
+    interception (0.5)
     jbuilder (2.2.9)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -85,6 +84,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -110,6 +110,15 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.3)
+      pry (>= 0.9.10)
+    pry-rescue (1.4.1)
+      interception (>= 0.5)
+      pry
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -140,7 +149,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    rubyzip (1.1.7)
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -151,11 +159,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    selenium-webdriver (2.45.0)
-      childprocess (~> 0.5)
-      multi_json (~> 1.0)
-      rubyzip (~> 1.0)
-      websocket (~> 1.0)
     slop (3.6.0)
     spring (1.3.3)
     sprockets (2.12.3)
@@ -183,7 +186,6 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    websocket (1.2.1)
     websocket-driver (0.5.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -203,10 +205,12 @@ DEPENDENCIES
   minitest-rails
   minitest-rails-capybara
   poltergeist
+  pry
+  pry-rails
+  pry-rescue
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  selenium-webdriver
   spring
   sqlite3
   turbolinks

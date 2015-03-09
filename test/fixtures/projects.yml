@@ -1,0 +1,7 @@
+portfolio:
+  name: Milton
+  technologies_used: Ruby, Rails, Zurb
+
+freelance:
+  name: Capn' Crunch
+  technologies_used: Ruby, Rails, Farmville API, Automilker
