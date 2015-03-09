@@ -1,9 +1,10 @@
 <h2>My Portfolio</h2>
-<ul>
-<% @projects.each do |project| %>
-  <li class="project" id="<%= dom_id(project) %>">
+  <ul>
+    <% @projects.each do |project| %>
+    <li class="project" id="<%= dom_id(project) %>">
     <h3><%= project.name %></h3>
     <p><%= project.technologies_used %></p>
+
     <div class="nav">
       <%= link_to 'Show', project %> |
       <%= link_to 'Edit', edit_project_path(project) %> |
@@ -12,5 +13,6 @@
   </li>
 <% end %>
 </ul>
+
 <br />
 <%= link_to 'New project', new_project_path %>
