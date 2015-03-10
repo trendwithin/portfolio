@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :articles
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,6 +6,7 @@ Rails.application.routes.draw do
    root                           'home#index'
    get 'articles_post' => 'articles#index'
    resources :projects
+   resources :articles
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
