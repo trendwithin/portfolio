@@ -2,7 +2,6 @@ require "test_helper"
 
 feature "Ability to edit and modify a blog post" do
   scenario "Clicking edit button brings up blog post" do
-    #Given an existing article
 
     #Given a modification to the blog post
     visit new_user_session_path
@@ -15,8 +14,11 @@ feature "Ability to edit and modify a blog post" do
     fill_in "Title", with: "One"
     fill_in "Body", with: "Two"
     current_path
+
     #when I submit the update
     click_on "Update Article"
+
+    #Then the page should update
     page.must_have_content "One"
     page.must_have_content "Two"
   end

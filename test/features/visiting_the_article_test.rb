@@ -15,8 +15,8 @@ feature "When visitor visits the article page then creates an article" do
 
     fill_in('Title', with: articles(:cr).title)
     fill_in('Body', with: articles(:cr).body)
-    #when I submit the form
 
+    #when I submit the form
     click_on "Create Article"
 
     #then there should be the following text
