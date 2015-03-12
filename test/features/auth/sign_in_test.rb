@@ -5,15 +5,15 @@ feature "As a User with an account I should be able to sign in" do
 
     #Given A user signs in
     visit '/'
-    click_on "Sign in"
+    click_on "Login"
 
     #When the user name and password is correct
     fill_in "Email", with: users(:mackey).email
-    fill_in "Password", with: users(:mackey).password
-    visit new_article_path
-    save_and_open_page
+    fill_in "Password", with: "password"
+    click_on 'Log in'
 
     #Then the page renders a correspoding sign out link
-    page.must_have_content "Sign out"
+    page.must_have_content "Signed"
   end
 end
+
