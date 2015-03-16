@@ -3,7 +3,7 @@ class ApplicationPolicy
 
   def initialize(user, article)
     raise Pundit::NotAuthorizedError, "must be logged in" unless user
-    @user = user
+    @user = user || NullUser.new
     @article = article
   end
 
@@ -52,6 +52,16 @@ class ApplicationPolicy
 
   def scope
     Pundit.policy_scope!(user, article.class)
+  end
+
+  class NullUser
+    def editor?
+      false
+    end
+
+    def author?
+      false
+    end
   end
 
   class Scope
