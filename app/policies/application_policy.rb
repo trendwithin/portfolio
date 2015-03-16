@@ -36,19 +36,22 @@ class ApplicationPolicy
   end
 
   def update?
-    @user.editor? || @user.author?
+    @user.editor?
+    # @user && (user.editor?...)
+    #@user.editor? || (record.author == @user && record.published == false)
   end
 
   def edit?
-    @user.editor? || @user.author?
+    (@user.editor? || @user.author?) && article.author == @user && article.publish? == false
   end
 
   def destroy?
     @user.editor?
+    # || ((@user.id == record.author_id) && record.published)
   end
 
   def scope
-    Pundit.policy_scope!(user, record.class)
+    Pundit.policy_scope!(user, article.class)
   end
 
   class Scope

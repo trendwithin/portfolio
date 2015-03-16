@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    #TODO check policy
   end
 
   # GET /articles/new
@@ -21,7 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-     flash[:success] = "Article was successfully"
+     flash[:success] = "Article was successfully updated"
   end
 
   # POST /articles

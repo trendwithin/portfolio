@@ -42,4 +42,10 @@ feature 'Creating an article' do
     click_on "Create Article"
     page.text.must_include "Status: Published"
   end
+
+  scenario "Author can not edit another authors post" do
+    sign_in(:author)
+    visit edit_article_path(articles(:cr))
+    page.text.wont_include("Update")
+  end
 end
