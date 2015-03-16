@@ -132,6 +132,8 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -218,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -233,6 +236,7 @@ DEPENDENCIES
   pry
   pry-rails
   pry-rescue
+  pundit
   rails (= 4.2.0)
   rails_12factor
   sass-rails (~> 5.0)

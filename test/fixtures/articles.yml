@@ -2,8 +2,10 @@ cr:
   title: Code Rails
   body: Accelerator
   author: mackey
+  published: true
 
 mic:
   title: Testing One Two Three
   body: Check One Check Two
   author: mackey
+  published: true

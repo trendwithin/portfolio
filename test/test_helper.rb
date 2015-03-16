@@ -28,3 +28,10 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
   include Capybara::Assertions
 end
+
+def sign_in(role = :editor)
+  visit new_user_session_path
+  fill_in "Email", with: users(role).email
+  fill_in "Password", with: "password"
+  click_on "Log in"
+end
