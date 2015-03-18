@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   def index
     #@articles = Article.all
     @articles = policy_scope(Article.all)
+    #@articles = policy_scope(Article)
   end
 
   # GET /articles/1
