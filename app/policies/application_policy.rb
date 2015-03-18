@@ -2,21 +2,8 @@ class ApplicationPolicy
   attr_reader :user, :article
 
   def initialize(user, article)
-    raise Pundit::NotAuthorizedError, "must be logged in" unless user
     @user = user || NullUser.new
     @article = article
-  end
-
-   def editor?
-    @user.editor?
-  end
-
-  def author?
-    @user.author?
-  end
-
-  def publish?
-    @user.editor?
   end
 
   def index?
@@ -37,8 +24,6 @@ class ApplicationPolicy
 
   def update?
     @user.editor?
-    # @user && (user.editor?...)
-    #@user.editor? || (record.author == @user && record.published == false)
   end
 
   def edit?
@@ -47,7 +32,6 @@ class ApplicationPolicy
 
   def destroy?
     @user.editor?
-    # || ((@user.id == record.author_id) && record.published)
   end
 
   def scope

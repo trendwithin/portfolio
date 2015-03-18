@@ -9,3 +9,9 @@ mic:
   body: Check One Check Two
   author: mackey
   published: true
+
+mac:
+  title: Mac the Knife
+  body: Classic sung by...
+  author: mackey
+  published: false
