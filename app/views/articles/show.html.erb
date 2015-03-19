@@ -19,6 +19,10 @@
   <b>Status:</b>
   <%= @article.published? ? "Published" : "Unpublished" %>
   </p>
+  <%= render @comments %>
 
+<% if user_signed_in? %>
+  <%= link_to "Comment", new_article_comment_path(@article) %>
+<% end %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
