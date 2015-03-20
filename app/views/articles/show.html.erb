@@ -1,28 +1,36 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
-
-<p id="author">
-  <b>By:</b>
-  <%= @article.author.email %>
-</p>
-
+<%= render 'header' %>
+<div class="large-9 columns" role="content">
+  <p>
+    <strong>Title:</strong><br />
+    <%= @article.title %>
+  </p>
+</div>
+<div class="large-9 columns" role="content">
+  <article>
+  <p>
+    <strong>Article</strong><br />
+    <%= @article.body %>
+  </p>
+  </article>
+</div>
+<div class="large-9 columns" role="content">
+  <p id="author">
+    <b>By:</b><br />
+    <%= @article.author.email %>
+  </p>
+</div>
+<div class="large-9 columns" role="content">
 <p id="status">
-  <b>Status:</b>
+  <b>Status:</b> <br />
   <%= @article.published? ? "Published" : "Unpublished" %>
   </p>
   <%= render @comments %>
-
-<% if user_signed_in? %>
-  <%= link_to "Comment", new_article_comment_path(@article) %>
-<% end %>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</div>
+<div class="large-9 columns" role="content">
+  <% if user_signed_in? %>
+    <%= link_to "Comment", new_article_comment_path(@article) %>
+  <% end %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+</div>
