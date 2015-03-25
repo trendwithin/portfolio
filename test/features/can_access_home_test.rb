@@ -10,11 +10,16 @@ end
 
 #Given A Click on Home Page's Blog Link
 feature "Click Block Link on Home Page" do
-  #when user clicks
   scenario "Render Articles" do
-    visit root_path
+
+    # Given a  user visits home
+    visit '/'
+
+    # When a user clicks Ruby
     click_link('Ruby')
-    page.must_have_content "Listing Articles"
-    page.wont_have_content "Goodbye All!"
+
+    # Then a listing of articles renders
+    page.must_have_content "Listing"
+    page.wont_have_content "NOTHING TO SEE HERE"
   end
 end

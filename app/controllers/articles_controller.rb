@@ -5,12 +5,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = policy_scope(Article.all)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @comment = @article.comments.new
+    @comments = policy_scope(@article.comments)
   end
 
   # GET /articles/new
@@ -20,7 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-     flash[:success] = "Article was successfully"
+
   end
 
   # POST /articles
@@ -72,6 +74,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, (:published if current_user.role =="editor"))
     end
 end

@@ -8,7 +8,7 @@
              <li><a href="#" class="button">Link 4</a></li>
             </ul>
           </div>
-          <h1>Blog <small>Life Drailed, Adventures in Ruby</small></h1>
+          <h1>Blog <small>Life Derailed, Adventures in Ruby</small></h1>
           <hr/>
         </div>
       </div>
@@ -20,12 +20,12 @@
                 <% unless @latest_blog_posts.nil? %>
                  <ul>
                    <% @latest_blog_posts.each do |post| %>
-                   <% if nil != post && post.respond_to?(:pubDate) %>
-                   <li>
-                     <%= link_to post.title, post.link  %>
-                    (<%= time_ago_in_words(post.pubDate) %> ago via blog feed)
-                    </li>
-                    <% end %>
+                     <% if nil != post && post.respond_to?(:pubDate) %>
+                       <li>
+                         <%= link_to post.title, post.link  %>
+                        (<%= time_ago_in_words(post.pubDate) %> ago via blog feed)
+                       </li>
+                     <% end %>
                   <% end %>
                 </ul>
                  <% else %>
@@ -53,16 +53,14 @@
             <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
 
             <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
           </article>
-
         </div>
 
         <aside class="large-3 columns">
 
           <h5>Categories</h5>
           <ul class="side-nav">
-            <li><%= link_to "Ruby Posts", articles_path %></li>
+            <li><%= link_to "Ruby", articles_path %></li>
             <li><a href="#">News</a></li>
             <li><a href="#">Code</a></li>
             <li><a href="#">Design</a></li>
@@ -75,10 +73,7 @@
             <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
             <a href="#">Read More →</a>
           </div>
-
         </aside>
-
-
       </div>
 
       <footer class="row">
