@@ -23,3 +23,15 @@ To Do
 Blog Image
 
 ![Blog](http://goo.gl/JZ2C3v)
+
+Initialize Rails
+Set-up test suite
+Render Welcome Page
+
+Initialize Rails
+Set-up test suite
+Render Welcome Page
+
+Add Projects
+Apply BDD practices to developing a MVC from scratch.
+
