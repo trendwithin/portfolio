@@ -19,7 +19,7 @@
     <%= f.label :body %><br>
     <%= f.text_field :body %>
   </div>
-  <% if ArticlePolicy.new(current_user, @article).publish? %>
+  <% if current_user.role == "editor" %>
        <div class="row collapse">
        <div class="small-3 columns">
         <%= f.label :published, class: "right inline", title: "Is this article published?", data: {tooltip: true } %>
@@ -29,7 +29,7 @@
         <%= f.check_box :published %>
       </div>
     </div>
-    <% end %>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

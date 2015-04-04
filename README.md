@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/trendwithin/portfolio/badges/gpa.svg)](https://codeclimate.com/github/trendwithin/portfolio)
 Port Personal Web Page From PHP to Rails
 
 Sign Up authorization with Devise:

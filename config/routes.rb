@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+
+   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root                           'home#index'
-   get 'articles_post' => 'articles#index'
-   resources :projects
-   resources :articles
+  root 'home#index'
+  resources :projects
+  resources :articles do
+    resources :comments
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

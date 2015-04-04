@@ -1,0 +1,10 @@
+comment_1:
+  commenter_name: xyz
+  commenter_url: xyz/abc
+  commenter_email: author@example.com
+  user_ip: 127.0.0.1
+  user_agent: Gecko
+  referrer: annonymizer
+  content: Drunken Rant
+  approved: true
+  article_id: 2
