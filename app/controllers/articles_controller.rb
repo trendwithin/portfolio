@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
   def show
     @comment = @article.comments.new
     @comments = policy_scope(@article.comments)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   # GET /articles/new
@@ -22,6 +26,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
 
   end
 
@@ -33,6 +40,12 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.js do
+          render js: <<-endjs
+            window.location = '#{articles_path}';
+          endjs
+        end
+
         format.json { render :show, status: :created, location: @article }
         current_user.articles << @article
       else
@@ -49,6 +62,11 @@ class ArticlesController < ApplicationController
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
+        format.js do
+          render js: <<-endjs
+          window.location = '#{articles_path}';
+          endjs
+        end
       else
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
@@ -63,6 +81,11 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+       format.js do
+         render js: <<-endjs
+          window.location = '#{articles_path}';
+          endjs
+       end
     end
   end
 
