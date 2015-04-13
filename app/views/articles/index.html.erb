@@ -2,7 +2,7 @@
 <%= render 'header' %>
 <h1>Listing Articles</h1>
 
-<table>
+<table id="list">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,15 +14,15 @@
   <tbody>
   <% @articles.each do |article| %>
     <tr id="<%= dom_id(article) %>">
-      <td><%= article.title %></td>
-      <td><%= article.body %></td>
-      <td><%= link_to 'Show', article %></td>
+      <td class="title"><%= article.title %></td>
+      <td class="body"><%= article.body %></td>
+      <td><%= link_to 'Show', article, remote: true %></td>
 
       <% if policy(article).update? %>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), remote: true %></td>
       <% end %>
       <% if policy(article).destroy? %>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', article, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
   <% end %>
@@ -31,6 +31,6 @@
 
 <br>
  <% if user_signed_in? %>
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path, id: "new_link", remote: true %>
 <% end %>
 
